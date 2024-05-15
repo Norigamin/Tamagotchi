@@ -25,41 +25,38 @@ def app():
     #Marco GIF'S
     gif_frame = Frame(ventana,width=200,height=170,background="blue")
     #GIF'S
-
-    inicio1 = AnimatedLabel(gif_frame, "images/inicio1.gif")
-    inicio2 = AnimatedLabel(gif_frame, "images/inicio2.gif")
-    inicio3 = AnimatedLabel(gif_frame, "images/inicio3.gif")
-
-    comiendo1 = AnimatedLabel(gif_frame, "images/comiendo1.gif")
-    comiendo2 = AnimatedLabel(gif_frame, "images/comiendo2.gif")
-    comiendo3 = AnimatedLabel(gif_frame, "images/comiendo3.gif")
-
-    descansando1 = AnimatedLabel(gif_frame, "images/descansando1.gif")
-    descansando2 = AnimatedLabel(gif_frame, "images/descansando2.gif")
-    descansando3 = AnimatedLabel(gif_frame, "images/descansando3.gif")
-
-    jugando1 = AnimatedLabel(gif_frame, "images/jugando1.gif")
-    jugando2 = AnimatedLabel(gif_frame, "images/jugando2.gif")
-    jugando3 = AnimatedLabel(gif_frame, "images/jugando3.gif")
     gif_frame.place(x=155,y=265)
     
-    def show_gif(gif_to_show):
-        gif_to_show.pack()
-        gif_frame.after(1000)
-        # inicio1.place_forget()
-        # inicio2.place_forget()
-        # inicio3.place_forget()
-        # comiendo1.place_forget()
-        # comiendo2.place_forget()
-        # comiendo3.place_forget()
-        # descansando1.place_forget()
-        # descansando2.place_forget()
-        # descansando3.place_forget()
-        # jugando1.place_forget()
-        # jugando2.place_forget()
-        # jugando3.place_forget()
+    def show_gif(type_action):
+        for widget in gif_frame.winfo_children():
+            widget.destroy()
+        gif_frame.pack_forget()
+
+        #inicio1 = AnimatedLabel(gif_frame, "images/inicio1.gif")
+        #inicio2 = AnimatedLabel(gif_frame, "images/inicio2.gif")
+        #inicio3 = AnimatedLabel(gif_frame, "images/inicio3.gif")
+
+        comiendo1 = AnimatedLabel(gif_frame, "images/comiendo1.gif")
+        comiendo2 = AnimatedLabel(gif_frame, "images/comiendo2.gif")
+        comiendo3 = AnimatedLabel(gif_frame, "images/comiendo3.gif")
+
+        descansando1 = AnimatedLabel(gif_frame, "images/descansando1.gif")
+        descansando2 = AnimatedLabel(gif_frame, "images/descansando2.gif")
+        descansando3 = AnimatedLabel(gif_frame, "images/descansando3.gif")
+
+        jugando1 = AnimatedLabel(gif_frame, "images/jugando1.gif")
+        jugando2 = AnimatedLabel(gif_frame, "images/jugando2.gif")
+        jugando3 = AnimatedLabel(gif_frame, "images/jugando3.gif")
         
-        
+        if type_action == "jugando":
+            gif=random.choice([jugando1, jugando2, jugando3]) 
+        elif type_action == "descansando":
+            gif=random.choice([descansando1, descansando2, descansando3])  
+        else :
+            gif=random.choice([comiendo1, comiendo2, comiendo3])
+        gif.pack()    
+        gif_frame.place(x=155,y=265) 
+              
     #Etiqueta Puntuacion
     score_label = Label(ventana, text=f"Puntuación\n{score}",font=("bold",20),pady=10)
     score_label.place(x=180,y=615)
@@ -85,17 +82,17 @@ def app():
 
     def comer_action():
         update_score(10)
-        show_gif(random.choice([comiendo1, comiendo2, comiendo3]))
+        show_gif("comiendo")
         print("Alimentando a la mascota")
 
     def jugar_action():
         update_score(-10)
-        show_gif(random.choice([jugando1, jugando2, jugando3]))
+        show_gif("jugando")
         print("Jugando con la mascota")
 
     def dormir_action():
         update_score(5)
-        show_gif(random.choice([descansando1, descansando2, descansando3]))
+        show_gif("descansando")
         print("Haciendo dormir a la mascota")
 
     button_frame = Frame(ventana, background="black")
@@ -106,6 +103,6 @@ def app():
     create_button("Dormir", dormir_action)
 
     ventana.mainloop()
-
+    
 if __name__ == "__main__":
     app()

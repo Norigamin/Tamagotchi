@@ -49,7 +49,6 @@ def app():
     lista_inicio_random(inicio1,inicio2,inicio3)
 
     def show_gif(gif_to_show):
-            
             comiendo1.place_forget()
             comiendo2.place_forget()
             comiendo3.place_forget()
