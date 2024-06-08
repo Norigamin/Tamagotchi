@@ -11,7 +11,7 @@ def app():
     ventana.title("Tamagotchi ¡MOLANG!")
     ventana.iconbitmap("tamagotchi_icon.ico")
     ventana.geometry("500x730")
-    # ventana.resizable(0,0)
+    ventana.resizable(0,0)
 
     # Variables
     score_comida = 40
