@@ -27,15 +27,15 @@ Run the file tamagotchi.py and Enjoy!
     
 ## Demo
 
-![GIF Molang!](images/screen_demo/image1.png)
+<img src="images/screen_demo/image1.png" width="100" height="150">
 
 ![GIF Molang!](images/inicio1.gif)
 
-![GIF Molang!](images/screen_demo/image2.png)
+<img src="images/screen_demo/image2.png" width="100" height="150">
 
 ![GIF Molang!](images/descansando3.gif)
 
-![GIF Molang!](images/screen_demo/image3.png)
+<img src="images/screen_demo/image3.png" width="100" height="150">
 
 ![GIF Molang!](images/jugando1.gif)
 
