@@ -1,6 +1,6 @@
-from tkinter import *
-from AnimatedLabel import *
-from ImageLabel import *
+from tkinter import Tk,Label,Button,PhotoImage
+from tools.ImageLabel import ImageLabel
+from tools.AnimatedLabel import AnimatedLabel
 import random
 import pygame
 
@@ -267,13 +267,13 @@ def app():
             state = "Muerto"
             state_label.config(background="gray")
 
-            comer_button.config(state=DISABLED)
-            jugar_button.config(state=DISABLED)
-            descansar_button.config(state=DISABLED)
+            comer_button.config(state="disabled")
+            jugar_button.config(state="disabled")
+            descansar_button.config(state="disabled")
         elif score_juego <= 0:
             state = "¿Es Encerio?"
             state_label.config(background="gray")
-            jugar_button.config(state=DISABLED)
+            jugar_button.config(state="disabled")
         elif score_comida < 30:
             state = "Hambriento"
             state_label.config(background="salmon")
@@ -329,9 +329,9 @@ def app():
                 play_music(["audio/SFX/muerte.wav"],1)
                 reset_button.place(x=0,y=0)
                 
-                comer_button.config(state=DISABLED)
-                jugar_button.config(state=DISABLED)
-                descansar_button.config(state=DISABLED)
+                comer_button.config(state="disabled")
+                jugar_button.config(state="disabled")
+                descansar_button.config(state="disabled")
             else:
                 state = "Curado"
                 state_label.config(text=f"Estado De Animo: \n{state}", background="pink")
