@@ -27,9 +27,15 @@ Run the file tamagotchi.py and Enjoy!
     
 ## Demo
 
+![GIF Molang!](images/screen_demo/image1.png)
+
 ![GIF Molang!](images/inicio1.gif)
 
+![GIF Molang!](images/screen_demo/image2.png)
+
 ![GIF Molang!](images/descansando3.gif)
+
+![GIF Molang!](images/screen_demo/image3.png)
 
 ![GIF Molang!](images/jugando1.gif)
 
