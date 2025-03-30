@@ -5,9 +5,7 @@ A Tamagotchi created by me for fun, it's inspired in Molang! An animal like a bu
 
 You need to download some external package, all of these packages are in requirements.txt, then you just have any version of python, a standar configuration of VS CODE that would run python well, and thats it, enjoy :D!
 
-> [!CAUTION]
-
-> **This project is in spanish**
+🔴 **This project is in spanish** 🔴
 
 
 
